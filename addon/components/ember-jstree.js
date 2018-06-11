@@ -159,6 +159,11 @@ export default Component.extend(InboundActions, EmberJstreeActions, {
         configObject["types"] = typesOptions;
       }
 
+      let conditionalselectOptions = this.get("conditionalselectOptions");
+      if (isPresent(conditionalselectOptions) && pluginsArray.includes("conditionalselect")) {
+        configObject["conditionalselect"] = conditionalselectOptions;
+      }
+
       let contextmenuOptions = this.get("contextmenuOptions");
       if (
         isPresent(contextmenuOptions) &&
