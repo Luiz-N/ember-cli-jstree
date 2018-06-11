@@ -161,6 +161,12 @@ export default Ember.Component.extend(InboundActions, EmberJstreeActions, {
             if (Ember.isPresent(dndOptions) && pluginsArray.includes('dnd')) {
                 configObject['dnd'] = dndOptions;
             }
+
+            let conditionalselectOptions = this.get("conditionalselectOptions");
+            if (Ember.isPresent(conditionalselectOptions) && pluginsArray.includes("conditionalselect")) {
+              configObject["conditionalselect"] = conditionalselectOptions;
+            }
+
         }
 
         return configObject;
